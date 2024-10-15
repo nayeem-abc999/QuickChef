@@ -1,0 +1,195 @@
+/* css/recipes_nutrition.css */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Page title */
+.page-title {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Section title */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 2em 0 1em;
+  font-family: "Roboto", sans-serif;
+  color: #02a284;
+}
+
+/* Nutritional info */
+.nutritional-info {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.nutritional-info p,
+.nutritional-info td,
+.nutritional-info th {
+  margin: 0 0 1em;
+}
+
+
+/* Toggle buttons */
+.toggle-btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #02a284;
+  color: white;
+}
+
+/* Recipe cards */
+.recipe-card {
+  background-color: #f3f7f9;
+  border: 1px solid #9dd0b8;
+  border-radius: 5px;
+  padding: 15px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.recipe-info h3 {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.recipe-info p {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 0.5em;
+}
+
+.recipe-info strong {
+  font-weight: 600;
+  color: #333;
+}
+
+.recipe-info .source {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: auto;
+  color: #888;
+  margin-top: 1em;
+}
+
+.recipe-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.recipe-info li {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 0.5em;
+}
+
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Nutritional info table */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  font-family: "Roboto", sans-serif;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem;
+}
+
+.table-bordered,
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+
+/* Media queries */
+@media (min-width: 576px) {
+.recipe-card {
+width: 48%;
+}
+}
+
+@media (min-width: 768px) {
+.recipe-card {
+width: 48%;
+}
+}
+
+@media (min-width: 1024px) {
+.recipe-card {
+width: 30%;
+}
+}

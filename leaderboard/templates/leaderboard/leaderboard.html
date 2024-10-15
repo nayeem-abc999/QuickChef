@@ -1,0 +1,52 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/leaderboard.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="leaderboard-container">
+  <h3>The Leaderboard</h3>
+  <div id="leaderboard-table-container">
+    <table id="leaderboard-table" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in table %}
+        <tr>
+          <td>{{ row.0 }}</td>
+          <td>{{ row.1 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function updateLeaderboard() {
+    $.ajax({
+      url: "{% url 'leaderboard_data' %}",
+      success: function(data) {
+        $("#leaderboard-table tbody").empty();
+        data.forEach(function(row) {
+          var tr = $("<tr>");
+          tr.append($("<td>").text(row[0]));  // username
+          tr.append($("<td>").text(row[1]));  // score
+          $("#leaderboard-table tbody").append(tr);
+        });
+      }
+    });
+  }
+
+  $(document).ready(function() {
+    setInterval(updateLeaderboard, 5000); // Update leaderboard every 5 seconds
+  });
+</script>
+
+{% endblock content %}

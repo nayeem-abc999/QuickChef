@@ -1,0 +1,280 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/impact.css' %}">
+
+{% block title %}
+<title>User's positive impact</title>
+{% endblock title %}
+
+    <!-- BODY -->
+    <div id="body">
+      <div id="nav-container">
+        <div id="nav">
+          <button class="btn" id="summary-btn" onclick="activate1()"><div id="sum-text">Summary</div></button>
+          <button class="btn" id="awards-btn" onclick="activate2()"><div id="awards-text">Awards</div></button>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="container active1" id="summary-field">
+        <div class="summary" id="title">
+          <div id="profile-img-container">
+            <img src="{% static 'img/ava.png' %}"alt="img" height="100" >
+          </div>
+          <div id="title-text">
+            <h2 style="font-weight: bold;">User's positive impact</h2>
+          </div>
+        </div>
+        <div class="summary" id="type-of-save">
+          <div class="navbar-container">
+            <button class="btn"><div id="sum-text"><a href="{% url 'user_details' %}"><b>Personal Details</b></a></div></button>
+            <button class="btn"><div id="sum-text"><a href="{% url 'user_preferences' %}"><b>Dietary Preferences</b></a></div></button>
+          </div>
+          <div id="type-1st">
+            <div class="type-container">
+              <div id="icon-container">
+                <img src="{% static 'img/water-ic.jpg' %}"alt="img" height="100" >
+              </div>
+              <p class="icon-text">Water saved</p>
+            </div>
+            <div class="type-container">
+              <div id="icon-container">
+                <img src="{% static 'img/cloud-ic.jpg' %}"alt="img" height="100" >
+              </div>
+              <p class="icon-text">CO2 saved</p>
+            </div>
+            <div class="type-container">
+              <div id="icon-container">
+                <img src="{% static 'img/money-ic.jpg' %}" height="100" alt="img">
+              </div>
+              <p class="icon-text">Money saved</p>
+            </div>
+          </div>
+          <div id="type-2nd">
+            <p>Your water, CO2 and cost savings appear here after the first week of using QuickChef. Just make sure you are adding products and tracking any waste. We'll do the rest so you can see your progress weekly</p>
+          </div>
+        </div>
+        <div class="summary" id="time-of-use">
+          <p class="goal-text" id="add-goal-title">Add your motivation for using QuickChef</p>
+          <p id="set-your-goal" tabindex="0">Set your goal</p>
+          <div id="set-field" class="set-goal-container">
+            <!-- <form> -->
+              <div class="form-group" method="POST">
+                <textarea id="inputText" title="Your goal"></textarea>
+
+              </div>
+              <div class="form-group" id="btn-field">
+                <button class="cfm-btn" id="cancel-btn" >Cancel</button>
+                <button class="cfm-btn" id="save-btn" > Save goal</button>
+              </div>
+            <!-- </form> -->
+          </div>
+          <hr>
+          <p class="goal-text">You've been using Quick Chef for <strong>0 weeks</strong></p>
+          <div class="progress-container " style="width: 80%;display: inline-block;">
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div> 
+          <img src="{% static 'img/world.jpg' %}" alt="img" style="display: inline-block;margin-left: 20px;">
+          <p class="goal-text"><strong style="color: #02a284">8 weeks</strong> to go</p> 
+        </div>
+        <br>
+        <h3 class="title2">Your food waste summary</h3>
+        <div class="summary" id="summary-total">
+          <button class="btn" id="thisweek-btn" onclick="activate3()"><div id="thisweek-child-text">This week</div></button>
+          <button class="btn" id="lastweek-btn" onclick="activate4()"><div id="lastweek-child-text">Last week</div></button>
+          <div class="container active3" id="thisweek-text">
+            <div id="summary-total-container">
+              <p id="sum-thisweek-text">Your summary is on the way, make sure to track your food waste by swipping right on products in the At home page</p>
+              <img src="{% static 'img/pet.jpg' %}" alt="img" style="padding-left: 20px; display: inline-block;">
+            </div>
+          </div>
+          <div class="container" id="lastweek-text">
+            <div id="summary-lastweek-container">
+              <div class="lastweek-text-container">
+                <p id="sum-lastweek-text">£0.00</p>
+                <p id="sub-sum-lastweek-text">A total of 0 products</p>
+              </div>
+              <img src="{% static 'img/pet.jpg' %}" alt="img" style="padding-left: 20px; display: inline-block;">
+            </div>
+          </div>
+       </div>
+        <br>
+        <h3 class="title2">Weekly food waste cost</h3>
+        <br>
+        <br>
+        <div class="chart-container">
+          <canvas id="line-chart"></canvas>
+        </div>
+      </div>
+      <div class="container" id="awards-field">
+        <div id="impact-award-container">
+          <h3 class="title2" style="margin-left: 0;">Your impact awards</h3>
+          <div id="award-sub-title">
+            <p id="subtitle-text">Complete tasks to gain new achievements</p>
+            <img src="{% static 'img/award.jpg' %}" alt="">
+          </div>
+          <hr style="padding: 0;">
+          <div id="list-spoon">
+            <div class="spoon" id="bronze">
+              <img src="{% static 'img/bronze-spoon.jpg' %}" alt="">
+              <h1 style="font-size:30px; font-weight: bold;">1</h1>
+            </div>
+            <div class="spoon" id="silver">
+              <img src="{% static 'img/silver-spoon.jpg' %}" alt="">
+              <h1 style="font-size:30px;font-weight: bold;">1</h1>
+            </div>
+            <div class="spoon" id="golded">
+              <img src="{% static 'img/golden-spoon.jpg' %}" alt="">
+              <h1 style="font-size:30px;font-weight: bold;">1</h1>
+            </div>
+          </div>
+        </div>
+          <div id="award-list">
+            <div class="btn-container">
+              <button class="btn" id="achieve-btn" onclick="activate5()"><div id="achieve-child-text">Achievements</div></button>
+              <button class="btn" id="goal-btn" onclick="activate6()"><div id="goal-child-text">Goal</div></button>
+            </div>
+            <br>
+            <div class="container active5" id="achievement">
+              <div class="achie-ele">
+                <img src="{% static 'img/achieve.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Launched Quick Chef 5 days in a week</p>
+                <div style="display: flex;flex-direction: row; align-items: center;">
+                  <p style="color:#c2cfd5;font-size: large;font-weight: 700;">+1</p>
+                <img src="{% static 'img/golden-spoon.jpg' %}" alt="">
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/achieve.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Launched Quick Chef 3 days in a week</p>
+                <div style="display: flex;flex-direction: row; align-items: center;">
+                  <p style="color:#c2cfd5;font-size: large;font-weight: 700;">+1</p>
+                <img src="{% static 'img/silver-spoon.jpg' %}" alt="">
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/achieve.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Launched Quick Chef for the 1st time</p>
+                <div style="display: flex;flex-direction: row; align-items: center;">
+                  <p style="color:#c2cfd5;font-size: large;font-weight: 700;">+1</p>
+                <img src="{% static 'img/bronze-spoon.jpg' %}" alt="">
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/achieve.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Launched Quick Chef app for 10 days</p>
+                <div style="display: flex;flex-direction: row; align-items: center;">
+                  <p style="color:#c2cfd5;font-size: large;font-weight: 700;">+2</p>
+                <img src="{% static 'img/golden-spoon.jpg' %}" alt="">
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/achieve.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Launched Quick Chef 5 days in a week</p>
+                <div style="display: flex;flex-direction: row; align-items: center;">
+                  <p style="color:#c2cfd5;font-size: large;font-weight: 700;">+3</p>
+                <img src="{% static 'img/golden-spoon.jpg' %}" alt="">
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/achieve.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Launched Quick Chef 5 days in a week</p>
+                <div style="display: flex;flex-direction: row; align-items: center;">
+                  <p style="color:#c2cfd5;font-size: large;font-weight: 700;">+1</p>
+                <img src="{% static 'img/golden-spoon.jpg' %}" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="container" id="goal">
+              <div class="achie-ele">
+                <img src="{% static 'img/add.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Added 20 products</p>
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/add.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Added 100 products</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/add.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Added 250 products</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/scan.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Scanned 1 receipt</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/scan.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Scanned 10 receipt</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/scan.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Scanned 25 receipt</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/achieve.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Launched Quick Chef 3 days in a week</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/cook.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Selected 3 recipes</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/cook.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Selected 10 recipes</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/delete.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Swiped to record food waste (first week)</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="achie-ele">
+                <img src="{% static 'img/delete.jpg' %}" style="transform: scale(0.8); margin-right: 40px;" alt="">
+                <p style="font-size: large;font-weight: 700;">Swiped to record food waste (3 weeks in a row)</p> 
+                <div class="lock-icon">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> 
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{% static 'js/impact.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock content %}

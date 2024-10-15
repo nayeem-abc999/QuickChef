@@ -1,0 +1,114 @@
+{% extends "navbar.html" %}
+{% block title %}
+<title>Recipes & Nutrition</title>
+{% endblock title %}
+
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/recipes_nutrition.css' %}">
+
+  <h1 class="my-3 page-title text-center">Recipes & Nutrition</h1>
+
+  <div class="text-center mb-5">
+    <button class="btn toggle-btn active mx-0" id="nutritional-info-btn" style="background-color: #02a284; color: white;">Nutritional Info & Calories</button>
+    <button class="btn toggle-btn mx-0" id="suggested-recipes-btn" style="background-color: #eaeef0;">Suggested Recipes</button>
+  </div>
+
+  <!-- Nutritional Info & Calories section -->
+  <div id="nutritional-info">
+    <h2 class="mb-3 section-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNutritional Information on Current Inventory</h2>
+    <div class="nutritional-info mb-5">
+      {% for x in info %}
+        {%for y in x%}
+      <div class="recipe-card mb-5" style="margin-left: 30px;">
+        <div class="recipe-info" style="margin-left: 20px;">
+          <h3>{{ y.name }}</h3>
+          <ul>
+              <li>Calories: {{y.calories}}</li>
+              <li> Serving size: {{y.serving_size_g}}g</li>
+              <li>Total fat: {{y.fat_total_g}}g</li>
+              <li>Saturated fat: {{y.fat_saturated_g}}g</li>
+              <li>Protein: {{y.protein_g}}g</li>
+              <li>Sodium: {{y.sodium_mg}}mg</li>
+              <li>Potassium: {{y.potassium_mg}}mg</li>
+              <li>Cholesterol: {{y.cholesterol_mg}}mg</li>
+              <li>Carbohydrates: {{y.carbohydrates_total_g}}g</li>
+              <li>Fiber: {{y.fiber_g}}g</li>
+              <li>Sugar: {{y.sugar_g}}g</li>
+              <li>Weight: {{y.weight}}</li>  
+          </ul>
+        </div>
+      </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>  
+
+
+  <!-- Suggested Recipes section -->
+  <div id="suggested-recipes" class="d-none">
+    <h2 class="mb-3 section-title">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSuggested Recipes</h2>
+    <div class="recipes">
+      {% for x in recipes|slice:":15" %}
+      <div class="recipe-card mb-5">
+        <img src="{{ x.image }}" class="recipe-image mb-3" alt="{{ x.name }}">
+        <div class="recipe-info">
+          <h3>{{ x.name }}</h3>
+          <ul>
+          {% for ingredient in x.ingredients %}
+            <li>{{ ingredient|title }}</li>
+          {% endfor %}
+          </ul>
+          <p><strong>Calories:</strong> {{ x.calories }}</p>
+          <p><strong>Cooking Time:</strong> {{ x.time }}</p>
+          <p class="source">Source: <a href="{{ x.url }}" target="_blank">{{ x.url|url_hostname }}</a></p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+    const nutritionalInfoBtn = document.getElementById('nutritional-info-btn');
+    const suggestedRecipesBtn = document.getElementById('suggested-recipes-btn');
+
+    function updateButtonColors() {
+      toggleButtons.forEach(button => {
+        if (button.classList.contains('active')) {
+          button.style.backgroundColor = '#02a284';
+          button.style.color = 'white';
+        } else {
+          button.style.backgroundColor = '#eaeef0';
+          button.style.color = 'black';
+        }
+      });
+    }
+
+    nutritionalInfoBtn.addEventListener('click', () => {
+      // Show/hide sections
+      document.getElementById('nutritional-info').classList.remove('d-none');
+      document.getElementById('suggested-recipes').classList.add('d-none');
+      
+      // Toggle active class and update button colors
+      nutritionalInfoBtn.classList.add('active');
+      suggestedRecipesBtn.classList.remove('active');
+      updateButtonColors();
+    });
+
+    suggestedRecipesBtn.addEventListener('click', () => {
+      // Show/hide sections
+      document.getElementById('nutritional-info').classList.add('d-none');
+      document.getElementById('suggested-recipes').classList.remove('d-none');
+      
+      // Toggle active class and update button colors
+      nutritionalInfoBtn.classList.remove('active');
+      suggestedRecipesBtn.classList.add('active');
+      updateButtonColors();
+    });
+  </script>
+{% endblock content %}
+

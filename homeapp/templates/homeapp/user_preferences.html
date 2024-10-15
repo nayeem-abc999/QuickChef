@@ -1,0 +1,24 @@
+{% extends "navbar.html" %}
+{% block title %}
+<title>Preferences</title>
+{% endblock title %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+     <h1>User Preferences</h1>
+
+  {% if preferences %}
+    <p>Vegan: {{ preferences.vegan }}</p>
+    <p>Vegetarian: {{ preferences.vegetarian }}</p>
+    <p>Halal: {{ preferences.halal }}</p>
+    <p>Gluten Free: {{ preferences.glutenFree }}</p>
+    <p>Lactose Intolerance: {{ preferences.lactoseIntolerance }}</p>
+    <p>Dairy Free: {{ preferences.dairyFree }}</p>
+    <p>Nut Allergy: {{ preferences.nutAllergy }}</p>
+    <p>Other: {{ preferences.Other }}</p>
+  {% else %}
+    <p>No preferences found.</p>
+  {% endif %}
+
+{% endblock content %}

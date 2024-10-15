@@ -1,0 +1,15 @@
+{% extends "navbar.html" %}
+{% block title %}
+<title>User Details</title>
+{% endblock title %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,146 @@
+  /* Header */
+  
+  header {
+    background-color: #006a53;
+    padding: 1.47rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown:after {
+    content: "\25BC";
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #006a53;
+    width: 150px;
+    padding: 0.5rem;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #005140;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 2rem;
+    align-items: center;
+    display: flex;
+  }
+  
+  nav ul li img {
+    align-self: center;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-family: 'Simplifica', sans-serif;
+    font-weight: bold;
+    font-size: 1.18rem;
+  }
+  
+  nav ul li a:hover {
+    color: #e5f6ea;
+  }
+  
+  nav ul li:nth-child(2) {
+    margin-left: auto;
+  }
+  
+  nav ul li:nth-child(4) {
+    margin-right: 3rem;
+  }
+  
+  nav ul li:nth-child(3) {
+    vertical-align: middle;
+  }
+  
+  nav ul li:nth-child(3) img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .nav-right {
+    position: absolute;
+    right: 1.45rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .nav-right ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-right ul .right-button {
+    margin-left: 1rem;
+  }
+  
+  .nav-right ul .right-button a {
+    background-color: #6a8c32;
+    color: #FFF;
+    padding: 0.6rem 1.2rem; /* Decrease padding for a smaller button */
+    border-radius: 10px; /* More rounded edges */
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif; /* Add a nice font */
+    font-weight: bold;
+    font-size: 1.1rem; /* Decrease font size */
+  }
+  
+  .nav-right ul .right-button a:hover {
+  }
+   
+  

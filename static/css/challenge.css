@@ -1,0 +1,44 @@
+body {
+    background-color: #f8dcc8;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h3 {
+    font-size: 60px; /* Increased font size */
+    text-align: left; /* Moved text to left */
+    margin-top: 50px;
+    font-weight: bold; /* Made text bold */
+    color: #008000; /* Changed color to different green, replace with any other green if you prefer */
+}
+
+h1, h2 {
+    text-align: left; /* Moved text to left */
+    font-size: 30px; /* Increased font size for h1 and h2 */
+    font-weight: bold; /* Made text bold */
+    color: #13b480; /* Same green color as original. Change if you want a different color */
+}
+
+
+.challenge-container {
+    margin: 0 auto;
+    width: 90%; /* A little bit of margin on the sides for aesthetics */
+    border: 1px solid #13b480;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #FF5500;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF3300;
+}

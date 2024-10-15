@@ -1,0 +1,427 @@
+body {
+    color: #ff0000; /* Change the color value to your preferred color */
+}
+
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* For Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #ddd #f5f5f5;
+  }
+textarea::placeholder {
+    font-size: 20px;
+    padding: 2px 0 0 10px;
+}
+
+textarea[id="inputText"] {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+p {
+    font-weight: 500;
+    font-size: x-large;
+}
+
+#body {
+    padding: 0 100px 0 100px;
+    background-color: #f0f5f8;
+}
+
+.container {
+    display: none;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#nav-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav {
+    background-color: #eaeef0;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 50%;
+    border-radius: 15px;
+}
+
+#summary-btn,
+#thisweek-btn {
+    color: white;
+    background-color: #02a284;
+}
+
+#lastweek-btn {
+    background-color: #eaeef0;
+}
+
+.btn {
+    font-weight: 600;
+    background-color: #eaeef0;
+    border-width: 0px;
+    border-radius: 15px;
+    height: 40px;
+    width: 30%;
+}
+
+#summary-btn,
+#awards-btn {
+    width: 50%;
+}
+
+.container.active1 {
+    display: block;
+    color: white;
+}
+
+.container.active2 {
+    display: block;
+    color: white;
+}
+
+.container.active3 {
+    display: block;
+    color: black;
+}
+
+.container.active4 {
+    display: block;
+    color: black;
+}
+
+.container.active5 {
+    display: block;
+    color: black;
+}
+
+.container.active6 {
+    display: block;
+    color: black;
+}
+
+/* 
+    SUMMARY SIDE
+*/
+#sumary-field {
+    display: block;
+}
+
+#title {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary #profile-img-container {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.summary #title-text {
+    color: black;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#type-of-save {
+    display: block;
+    background-color: #02a284;
+    border-radius: 20px;
+    margin: 50px 10% 20px 10%;
+    padding-top: 20px;
+}
+
+#type-1st {
+    padding-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 100;
+}
+
+.btn a {
+    color: #ff0000; /* Change the color value to your preferred color */
+}
+
+
+#type-2nd {
+    padding: 75px 10% 10%;
+    font-weight: 100;
+}
+
+.type-container {
+
+    width: 100px;
+}
+.icon-text{
+    padding-top: 10px;
+    font-size: 23px;
+}
+#icon-container {
+    color: aqua;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: white;
+    overflow: hidden;
+}
+
+#summary-total-container,
+#summary-lastweek-container {
+    text-align: left;
+    padding: 50px 0;
+}
+
+#time-of-use {
+    text-align: left;
+    color: black;
+    display: block;
+    background-color: white;
+    border-radius: 20px;
+    margin: 50px 10% 20px 10%;
+    padding: 30px 30px;
+}
+
+.set-goal-container {
+    display: none;
+    padding-top: 10px;
+    width: 100%;
+}
+
+#btn-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cfm-btn {
+    font-size: medium;
+    border: 0;
+    margin: 10px;
+    width: 20%;
+    height: 50px;
+    border-radius: 30px;
+}
+
+#save-btn {
+    background-color: #bfe460;
+    border: 0;
+}
+
+#inputText {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ccc;
+    font-family: Arial;
+}
+
+#goal-confirm-container {
+    display: block;
+}
+
+.summary #set-your-goal {
+    font-weight: bold;
+    color: #02a284;
+    text-decoration: none;
+}
+.goal-text{
+    font-size: large;
+}
+#sum-thisweek-text {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    display: inline-block;
+    padding-left: 10px;
+    width: 75%;
+}
+
+.lastweek-text-container {
+    display: inline-block;
+    text-align: center;
+    width: 75%;
+}
+
+#sum-lastweek-text {
+    font-size: 40px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ebebeb;
+    margin: 10px 0;
+}
+
+.title2 {
+    font-weight: 700;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    color: black;
+    display: flex;
+    float: left;
+}
+
+.chart-container {
+    background-color: white;
+    border-radius: 20px;
+    height: 500px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 50px;
+}
+
+#line-chart {
+    width: 100%;
+    height: 100%;
+}
+
+#summary-total {
+    color: black;
+    display: block;
+    background-color: white;
+    border-radius: 20px;
+    margin: 50px 10% 20px 10%;
+    padding-top: 20px;
+    padding-left: 20px;
+
+}
+
+/* Award */
+#impact-award-container,
+#award-list {
+    text-align: left;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    margin: 0px 10% 20px 10%;
+    padding: 35px 70px;
+}
+
+#subtitle-text {
+    font-size: large;
+    color: #c2cfd5;
+    display: inline-block;
+}
+
+#award-sub-title {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+}
+
+#award-sub-title>img {
+    display: inline;
+    float: right;
+}
+
+#list-spoon {
+    padding: 0 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.spoon>* {
+    display: inline-block;
+}
+
+#award-list {
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+#achievement {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#goal {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.achie-ele {
+    margin: 10px;
+    height: 100px;
+    border: 1px solid #c2cfd5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.lock-icon {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #c2cfd5;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.fa-lock:before {
+    display: flex;
+    align-items: center;
+    content: "\f023";
+    color: gray;
+    font-size: 15px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    background-color: #eaeef0;
+    width: 60%;
+    border-radius: 10px;
+}
+
+#achieve-btn,
+#goal-btn {
+    border-radius: 10px;
+    width: 100%;
+    display: inline-block;
+    background-color: #eaeef0;
+}
+
+#achieve-btn {
+    background-color: #02a284;
+    color: white;
+}

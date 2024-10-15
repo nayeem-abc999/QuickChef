@@ -1,0 +1,71 @@
+{% extends "navbar.html" %}
+{% block title %}
+<title>My Kitchen</title>
+{% endblock title %}
+
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/my_kitchen.css' %}">
+
+  <section class="kitchen-container">
+    <div class="h3-container">
+      <h3>My Kitchen</h3>
+    </div>
+  
+    <div class="navbar-container">
+      <button class="toggle-btn" id="inventory-button">Inventory</button>
+      <button class="toggle-btn" id="to-buy-button">To Buy</button>
+      <button class="toggle-btn" id="thrown-away-button">Thrown Away</button>
+    </div>
+  
+    <div class="kitchen-content">
+      <form method="POST" enctype="multipart/form-data" onsubmit="return validateForm()" class="kitchen-form">
+        {% csrf_token %}
+        <div class="form-group">
+          {{ form.as_p }}
+        </div>
+        <input type="submit" id="submit" value="Submit" class="btn btn-primary submit-button">
+      </form>
+  
+      <div id="table-container">
+        <table id="kitchen-table" class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Weight (g)</th>
+              <th>Expiry Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for food in inventory %}
+            <tr>
+              <td>{{ food.name }}</td>
+              <td>{{ food.weight }}</td>
+              <td>{{ food.expiry }}</td>
+              <td><button class="delete-button" data-id="{{ food.id }}">Delete</button></td>
+            </tr>
+            {% empty %}
+            <tr id="empty-table-message">
+              <td colspan="4">Inventory table is currently empty, start adding Food!</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
+
+    <script type="text/javascript">
+      // Initially hide the table
+      document.getElementById('kitchen-table').style.display = 'none';
+
+      document.getElementById('inventory-button').addEventListener('click', function() {
+        // When the "Inventory" button is clicked, show the table
+        document.getElementById('kitchen-table').style.display = 'block';
+      });
+    </script>
+    
+  {% endblock content %}

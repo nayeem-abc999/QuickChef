@@ -1,0 +1,33 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/challenge.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="challenge-container">
+  <h3>The Challenge</h3>
+    <br><br>
+    <h1>About The Challenge</h1>
+    <p>Welcome to The Challenge, your ultimate companion in the kitchen! We are a quick chef web application designed to make your cooking experience efficient, delicious, and sustainable. With our intuitive features, we empower you to reduce food waste by maximizing the ingredients in your cupboards and fridge. Say goodbye to those forgotten items and hello to inspired meals!</p>
+
+    <h2><br>Our Mission</h2>
+    <p>At The Challenge, our mission is to transform the way you approach home cooking while actively combating food waste. We believe that every ingredient in your kitchen has the potential to create a mouthwatering dish. By providing you with a comprehensive solution, we aim to inspire culinary creativity and promote sustainability in your daily life.</p>
+
+    <h2><br>Effortless Inventory Management</h2>
+    <p>Keeping track of what you have in your cupboards and fridge can be a daunting task, but with The Challenge, it becomes effortless. Our innovative app allows you to easily input and update your inventory, including quantities and expiration dates. By maintaining an accurate record of your ingredients, you'll never let anything go to waste again.</p>
+
+    <h2><br>Unlock Culinary Creativity</h2>
+    <p>Don't know what to cook with the ingredients you have? The Challenge has got you covered. Our smart algorithm analyzes your inventory and suggests an array of delicious recipes that can be prepared using the items at your disposal. Say goodbye to repetitive meals and hello to exciting new flavors. Prepare to embark on a culinary adventure like never before!</p>
+
+    <h2><br>Smart Shopping List</h2>
+    <p>For those times when you need just a few extra items to complete a recipe, The Challenge provides you with a smart shopping list. Based on the recipes you choose, our app generates a personalized list of ingredients to make your shopping experience efficient and stress-free. No more guesswork or unnecessary purchases. Get exactly what you need, when you need it.</p>
+
+    <h2><br>Inspiring Visuals</h2>
+    <p>We understand the importance of aesthetics in your culinary journey. The Challenge offers a visually appealing interface that engages and inspires you. From mouthwatering food photography to elegant design elements, we strive to create an immersive experience that ignites your passion for cooking. Prepare to be captivated at every click.</p>
+  
+    <h2><br>Join The Challenge Community</h2>
+    <p>Cooking is better when shared. Connect with a vibrant community of food enthusiasts, both novice and expert, through The Challenge. Share your favorite recipes, exchange tips and tricks, and explore endless possibilities in the kitchen. Together, we can build a sustainable and flavorful future.</p>
+    <a class="cta-button" href="{% url 'signup' %}">Join The Challenge Today</a>
+</div>
+{% endblock content %}

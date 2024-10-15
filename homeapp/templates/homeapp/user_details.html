@@ -1,0 +1,49 @@
+{% extends "navbar.html" %}
+{% block title %}
+<title>User Details</title>
+{% endblock title %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<style>
+    body {
+        background-color: #13b480;
+        font-family: Arial, sans-serif;
+    }
+
+    h3 {
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+    }
+
+    p {
+        width: 600px;
+        margin: 0 auto;
+        padding: 0.5rem;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    p strong {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<h3>User information</h3>
+{% if user_info %}
+    <p><strong>User ID:</strong> {{ user_info.user_id }}</p>
+    <p><strong>First Name:</strong> {{ user_info.fName }}</p>
+    <p><strong>Last Name:</strong> {{ user_info.lName }}</p>
+    <p><strong>Email:</strong> {{ user_info.email }}</p>
+    <p><strong>Phone Number:</strong> {{ user_info.phoneNumber }}</p>
+    <p><strong>Date of Birth:</strong> {{ user_info.dob }}</p>
+  {% else %}
+    <p>No user details found.</p>
+  {% endif %}
+
+{% endblock content %}

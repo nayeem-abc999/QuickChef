@@ -1,0 +1,62 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+<style>
+    body {
+        background-color: #13b480;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+    }
+
+    form {
+        width: 600px; /* Increased width */
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"] {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.7rem;
+        font-weight: bold;
+        background-color: #0d8f67;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0b7556;
+    }
+</style>
+
+<br><h2>Sign Up</h2>
+<form method="post">
+ {% csrf_token %}
+ {{ form.as_p }}
+ <button type="submit">Sign Up</button>
+</form>
+{% endblock content %}

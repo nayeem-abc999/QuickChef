@@ -1,0 +1,124 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer_blog.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <section class="header-card">
+    </section>
+    <section class="about-section" style="background-color: #83a170;">
+      <div class="about-content">
+        <h2>About Quick Chef</h2>
+        <p>Quick Chef is a website dedicated to helping you reduce food waste and save money. We offer a variety of services to help you plan your meals, store your food, and use up your leftovers. Our goal is to help you make the most of the food you have, so you can save money and reduce your impact on the environment.</p>
+        <a href="{% url 'signup' %}" class="get-started-button">Get Started</a>         
+      </div>
+      <div class="gif-section">
+        <div class="gif-container">
+          <div class="gif-item">
+            <img class="reduce-waste" src="{% static 'images/reduce-waste.gif' %}" alt="Quick Chef Left Gif Image">
+            <div class="reduce-waste-text"><h3><b>Reduce Waste!</b></h3></div>
+          </div>
+          <div class="gif-item">
+            <img src="{% static 'images/food-animation.gif' %}" alt="Quick Chef Gif Image">
+            <h3><b>Make delicious meals!</b></h3>
+          </div>
+          <div class="gif-item">
+            <img class="save-money" src="{% static 'images/money-save2.gif' %}" alt="Quick Chef Right Gif Image">
+            <h3><b>Save Money!</b></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+    <section class="services-section">
+      <div class="services-content">
+        <h2><a href="#">Quick Chef</a></h2>
+        <div class="service-item">
+          <img src="{% static 'images/meal-plan.png' %}" alt="Meal Planning" />
+          <h3>Meal Planning</h3>
+          <p>Our meal planning service helps you plan your meals for the week, so you can use up the food you have and reduce waste.</p>
+        </div>
+        <div class="service-item">
+          <img src="{% static 'images/food-storage.png' %}" alt="Food Storage" />
+          <h3>Food Storage</h3>
+          <p>Our food storage service provides you with tips and tricks for storing your food properly, so it lasts longer and stays fresh.</p>
+        </div>
+        <div class="service-item">
+          <img src="{% static 'images/leftover-recipes.png' %}" alt="Leftover Recipes" />
+          <h3>Leftover Recipes</h3>
+          <p>Our leftover recipe service gives you creative ideas for using up your leftovers, so you can save money and reduce waste.</p>
+        </div>
+      </div>
+    </section>
+    <section class="blog-section">
+      <div class="blog-content">  
+        <h2 style="margin: 20px;"><a id="blog-title" href="#">QUICK CHEF</a></h2>
+        <div id="blog-post-container">
+          <div class="blog-post">
+            <img src="{% static 'images/meal-plan.png' %}" alt="Meal Planning Blog" />
+            <h4 class="blog-post-title">5 TIPS FOR PLANNING YOUR MEAL</h4>
+            <p class="blog-post-content">Our latest blog post provides you with 5 tips for planning your meals, so you can reduce waste and save money.</p>
+          </div>
+          <div class="blog-post">
+            <img src="{% static 'images/food-storage-blog.png' %}" alt="Food Storage Blog" />
+            <h4 class="blog-post-title">HOW TO STORE YOUR FOOD PROPERLY</h4>
+            <p class="blog-post-content">Our latest</p> 
+          </div>
+        </div>
+      </div>
+    </section>
+            <section class="menu-section">
+              <div class="card">
+                <h2 style="font-size: 33px; text-align: center;">What's on the menu?</h2>
+                <p style="font-size: 18px; text-align: center;">Discover delicious meals made by our community members with leftover ingredients at home!</p>
+                <div class="image-grid">
+                  <div class="image-item">
+                    <img src="{% static 'images/Food/salad.jpg' %}" alt="Meal 1" style="width: 290px; height: 430px;">
+                    <p style="font-size: 20px; text-align: center; margin-top: 20px;">Vegetable steak with salad</p>
+                    <p style="font-size: 16px; text-align: center; font-style: italic;">By Sarah</p>
+                  </div>
+                  <div class="image-item">
+                    <img src="{% static 'images/Food/bread.jpg' %}" alt="Meal 2" style="width: 290px; height: 430px;">
+                    <p style="font-size: 20px; text-align: center; margin-top: 20px;">Courgette cake</p>
+                    <p style="font-size: 16px; text-align: center; font-style: italic;">By John</p>
+                  </div>
+                  <div class="image-item">
+                    <img src="{% static 'images/Food/curry.png' %}" alt="Meal 3" style="width: 290px; height: 430px;">
+                    <p style="font-size: 20px; text-align: center; margin-top: 20px;">Indian chicken curry</p>
+                    <p style="font-size: 16px; text-align: center; font-style: italic;">By Samantha</p>
+                  </div>
+                  <div class="image-item">
+                    <img src="{% static 'images/Food/banana.jpg' %}" alt="Meal 4" style="width: 290px; height: 430px;">
+                    <p style="font-size: 20px; text-align: center; margin-top: 20px;">Apple banana cream</p>
+                    <p style="font-size: 16px; text-align: center; font-style: italic;">By David</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <footer>
+              <div class="footer-container">
+                <div id="div-container">
+                  <div class="footer-col" id="col1">
+                    <h3 style="display: inline; font-weight: 900;">QUICK CHIEF<a style="display: inline;" href="">
+                        <h3 style="display: inline; font-weight: 900;"></h3>
+                      </a></h3>
+                    <br>
+                    <br>
+                    <p class="footer-p"></p>
+                  </div>
+                  <div class="footer-col" id="col2">
+                    <a href="" class="footer-link">Privacy</a>
+                    <a href="" class="footer-link">Terms & Conditions</a>
+                    <a href="" class="footer-link">Cookie Policy</a>
+                  </div>
+                  <div class="footer-col" id="col3">
+                    <p class="footer-p">Have any question? We are ready to help with whatever you need! Email us <a href="">email@gmail.com</a></p>
+                  </div>
+                </div>
+                <div id="div-container2">
+                  <p class="footer-p">@2023 Quick Chief by Group 11<span class="inline-space">|</span> All Rights Reserved <span class="inline-space"></p>
+                  <p class="footer-p"><a href="">Terms and Conditions  </a>  <span class="inline-space">|</span>   <a href="">  Privacy policy</a></p>
+                </div>
+              </div>
+            </footer>
+{% endblock content %}

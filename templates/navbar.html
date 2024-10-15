@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    {% block title %}
+      <title>Impact</title>
+    {% endblock title %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/impact.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+      </style>
+</head>
+<body>
+  {% block header %}
+  <header>
+    <div class="nav-container">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">About</a>
+            <div class="dropdown-content">
+              <a href="{% url 'issue' %}">The Challenge</a>
+              <a href="{% url 'team' %}">Who's it For?</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Features</a>
+            <div class="dropdown-content">
+              <a href="{% url 'inventory' %}">My Kitchen</a>          <!-- Inventory Management & Shopping Lists -->
+              <a href="{% url 'recipes' %}">Recipes & Nutrition</a> <!-- Recipe Suggestions and Nutritional Info & Calories  -->
+            </div>
+          </li>
+          <li><a href="{% url 'home' %}"><img src="{% static 'images/logo2.png' %}" alt="Quick Chef Logo"></a></li>
+          <li class="dropdown">
+            <a href="#">Analytics</a>
+            <div class="dropdown-content">
+              <a href="{% url 'impact' %}">Impact</a>          <!-- Inventory Management & Shopping Lists -->
+              <a href="{% url 'leaderboard' %}">Leaderboard</a> <!-- Recipe Suggestions and Nutritional Info & Calories  -->
+            </div>
+          </li>
+          <li><a href="{% url 'user_details' %}">Profile</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <ul>
+          {% if user.is_authenticated %}
+            <li class="right-button register-button"> <a href="">{{user.username}}</a> </li>
+            <li class="right-button"> <a href="{% url 'logout' %}">Logout</a> </li>
+            {% else %}
+            <li class="right-button register-button"> <a href="{% url 'signup' %}">Register</a> </li>
+            <li class="right-button"> <a href="{% url 'login' %}">Login</a> </li>
+            {% endif%}
+        </ul>
+      </div>
+    </div>
+  </header>
+  {% endblock header %}
+  {% block content %} {% endblock %}
+</body>
+</html>
